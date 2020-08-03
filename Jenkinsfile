@@ -11,7 +11,8 @@ pipeline {
 
         stage('Test') {
           steps {
-            echo 'deplymentTesting the '
+            echo 'deplymentTesting  '
+            echo 'Get the driver path${chromeDriverPath}'
           }
         }
 
@@ -24,5 +25,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    chromeDriverPath = 'C:\\driver\\web'
   }
 }
