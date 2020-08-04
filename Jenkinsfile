@@ -9,8 +9,6 @@ pipeline {
           }
         }
 
-
-
         stage('Test') {
           steps {
             echo 'deplymentTesting'
@@ -19,8 +17,8 @@ pipeline {
         }
 
         stage('TestLog') {
-           environment {
-              LocalVariable = 'Hello Local'
+          environment {
+            LocalVariable = 'Hello Local'
           }
           steps {
             writeFile(file: 'LogTestFile.txt', text: "This is an automated test file ${chromeDriverPath} and local variable ${LocalVariable}")
@@ -39,7 +37,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             archiveArtifacts 'LogTestFile.txt'
           }
